@@ -23,7 +23,7 @@ SA-fWavKAN establishes new quantifiable benchmarks across highly chaotic, multi-
 
 ## 🧠 Architecture Overview
 
-![SA-fWavKAN Architecture](KAN_Architecture.png)
+![SA-fWavKAN Architecture](KANArchitecture.png)
 *Architectural block diagram of the proposed State-Adaptive Fractional Wavelet Kolmogorov-Arnold Network (SA-fWavKAN)*. *The pipeline demonstrates the sequential integration of the Global Fractional Wavelet Dictionary, Selective KAN Gating, ZOH Discretization, and the final Hardware-Aware Temporal Rollout which combines the current sequence input with latent memory to generate the sequential output*.
 
 ---
