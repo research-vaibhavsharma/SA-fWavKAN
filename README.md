@@ -1,6 +1,5 @@
 # SA-fWavKAN: State-Adaptive Fractional Wavelet Kolmogorov-Arnold Networks
 
-<!-- Insert Badges Here (e.g., PyPI version, License, Build Status, CUDA Support) -->
 
 This repository contains the official PyTorch implementation of **SA-fWavKAN**, a novel neural architecture designed to systematically resolve the temporal memory deficits and parameter explosion bottlenecks that impede standard Kolmogorov-Arnold Networks (KANs) in dynamic sequence modeling. 
 
@@ -20,6 +19,27 @@ SA-fWavKAN establishes new quantifiable benchmarks across highly chaotic, multi-
 *   **Subseasonal-to-Seasonal (S2S) Climate Prediction (ChaosBench):** Achieves a **1.94°C** RMSE and an ACC of 0.82 across a 44-day forecasting horizon utilizing only 42M parameters.
 *   **Temporal Heterogeneous Graphs (TGB 2.0):** Delivers a **0.795** Test MRR in dynamic link prediction with an extraordinarily efficient 4.1 GB memory footprint, overcoming standard catastrophic forgetting.
 *   **Zero-Leakage OOD Atmospheric Modeling (Weather-10K):** Attains a pristine **1.18°C** RMSE for 2-meter temperature extremes under strictly out-of-distribution regimes.
+
+
+## 🧠 Architecture Overview
+
+![SA-fWavKAN Architecture](KAN_Architecture.png)
+*Architectural block diagram of the proposed State-Adaptive Fractional Wavelet Kolmogorov-Arnold Network (SA-fWavKAN)*. *The pipeline demonstrates the sequential integration of the Global Fractional Wavelet Dictionary, Selective KAN Gating, ZOH Discretization, and the final Hardware-Aware Temporal Rollout which combines the current sequence input with latent memory to generate the sequential output*.
+
+---
+
+## 📊 Experimental Visualizations
+
+### Subseasonal-to-Seasonal (S2S) Climate Prediction
+![Spatiotemporal Error Heatmap](Exp1fig1.png)
+**Spatiotemporal Error Heatmap evaluating structural integrity over a 44-day forecasting horizon**. 
+While baseline models like Mamba and HaKAN show significant error accumulation, SA-fWavKAN maintains highly localized, near-zero error bounds globally. This demonstrates the architecture's ability to preserve high-frequency boundary features via fractional wavelet atoms and retain boundary constraints indefinitely.
+
+### Extreme Weather Forecasting under Zero-Leakage OOD Regimes
+![Bivariate Histogram of Predicted vs. True Extreme Events](Exp3fig3.png)
+**Bivariate Histogram of Predicted vs. True Extreme Events**. 
+Evaluating extreme event calibration reveals that standard models like Mamba and HaKAN suffer from systemic horizontal dispersion and severe severity under-prediction. In contrast, SA-fWavKAN achieves flawless diagonal alignment, cementing the theoretical advantage of fractional wavelet derivatives in mapping unprecedented chaotic discontinuities and out-of-distribution anomalies.
+
 
 ## 📂 Repository Structure
 
