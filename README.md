@@ -21,4 +21,17 @@ SA-fWavKAN establishes new quantifiable benchmarks across highly chaotic, multi-
 *   **Temporal Heterogeneous Graphs (TGB 2.0):** Delivers a **0.795** Test MRR in dynamic link prediction with an extraordinarily efficient 4.1 GB memory footprint, overcoming standard catastrophic forgetting.
 *   **Zero-Leakage OOD Atmospheric Modeling (Weather-10K):** Attains a pristine **1.18°C** RMSE for 2-meter temperature extremes under strictly out-of-distribution regimes.
 
----
+## 📂 Repository Structure
+
+The repository is organized to strictly separate the global fractional wavelet dictionary, the selective state-space gating mechanisms, and the discrete hardware-aware rollout computations.
+
+```text
+SA-fWavKAN/
+├── safwavkan/                       # Core PyTorch Package
+│   ├── __init__.py                  # Module exports
+│   ├── dictionary.py                # Global Fractional Wavelet Dictionary (Eq. 6 & 7)
+│   ├── ssm_gating.py                # Selective KAN Gating & ZOH Discretization (Eq. 10 - 14)
+│   ├── selective_scan.py            # Hardware-Aware Temporal Rollout (Eq. 15 & 16)
+│   └── model.py                     # High-level SA-fWavKAN sequence modeling blocks
+├── requirements.txt                 # Python dependencies
+└── README.md                        # Project documentation
